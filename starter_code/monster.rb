@@ -1,4 +1,26 @@
-# Monster class
+class Monster
+  attr_accessor :habitat, :threat_level
+  @@count = 0
+  Threat_level = [:low, :medium, :high, :midnight]
+  def initialize(threat_level=:medium)
+    @habitat = 'cave'
+    @threat_level = threat_level
+    puts "RAWR!"
+    @@count += 1
+    if !(Threat_level.include? (@threat_level))
+      raise 'INVALID THREAT LEVEL'
+    end
+  end
+  def habitat (habitat)
+    @habitat == habitat
+  end
+
+  def self.count
+    @@count
+  end
+end
+
+
   # getters and setters for instance variables
 
   # class variable for count
